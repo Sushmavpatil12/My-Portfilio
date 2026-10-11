@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-cream: #F8F5EF;
+    --surface-white: #FFFFFF;
+    --sage-green: #8BA995;
+    --forest-green: #344C40;
+    --soft-lavender: #C7B8E5;
+    --blush-pink: #E9A5BC;
+    --champagne-gold: #D4AF75;
+    --text-charcoal: #302F38;
+    --text-muted: #6B6A75;
+    --border-color: #E5E1D8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sage-green);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Custom aesthetic scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F5EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C3D8CB;
+  border-radius: 9999px;
+  border: 2px solid #F8F5EF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8BA995;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Typography and utility classes */
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Aesthetic Canva & Scrapbook card utilities */
+.card-canva {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E1D8;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(48, 47, 56, 0.05), 0 2px 8px -1px rgba(139, 169, 149, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-canva:hover {
+  box-shadow: 0 16px 36px -4px rgba(52, 76, 64, 0.12), 0 4px 12px -2px rgba(139, 169, 149, 0.08);
+  border-color: #C3D8CB;
+  transform: translateY(-2px);
+}
+
+/* Scrapbook Polaroid Frame */
+.polaroid-frame {
+  background: #FFFFFF;
+  padding: 0.75rem 0.75rem 2.25rem 0.75rem;
+  border: 1px solid #E5E1D8;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(48, 47, 56, 0.1), 0 4px 10px -2px rgba(48, 47, 56, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  box-shadow: 0 18px 38px -6px rgba(48, 47, 56, 0.15), 0 8px 16px -3px rgba(48, 47, 56, 0.08);
+}
+
+/* Washi Tape Strips */
+.washi-tape {
+  position: absolute;
+  height: 1.6rem;
+  background-size: cover;
+  opacity: 0.85;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.washi-pink {
+  background-color: rgba(243, 173, 196, 0.7);
+  border-left: 2px dashed rgba(233, 165, 188, 0.8);
+  border-right: 2px dashed rgba(233, 165, 188, 0.8);
+}
+
+.washi-sage {
+  background-color: rgba(164, 192, 174, 0.7);
+  border-left: 2px dashed rgba(139, 169, 149, 0.8);
+  border-right: 2px dashed rgba(139, 169, 149, 0.8);
+}
+
+.washi-lavender {
+  background-color: rgba(199, 184, 229, 0.7);
+  border-left: 2px dashed rgba(167, 149, 211, 0.8);
+  border-right: 2px dashed rgba(167, 149, 211, 0.8);
+}
+
+.washi-yellow {
+  background-color: rgba(255, 234, 167, 0.75);
+  border-left: 2px dashed rgba(253, 203, 110, 0.8);
+  border-right: 2px dashed rgba(253, 203, 110, 0.8);
+}
+
+/* Sticky Note Aesthetic */
+.sticky-note {
+  background: #FFF9E6;
+  border: 1px solid #F1E5C4;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 20px -3px rgba(48, 47, 56, 0.08), 2px 4px 6px -1px rgba(253, 203, 110, 0.15);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.sticky-note:hover {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+/* Subtle organic polka-dot background */
+.bg-cream-dots {
+  background-image: radial-gradient(#D5CEBE 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Grid notebook paper pattern */
+.bg-notebook-grid {
+  background-image: 
+    linear-gradient(to right, rgba(229, 225, 216, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(229, 225, 216, 0.5) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism Sage/Cream */
+.glass-cream {
+  background: rgba(248, 245, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 225, 216, 0.7);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 225, 216, 0.8);
+}
+
+/* Stamp / Sticker effect */
+.sticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 3px 8px rgba(48, 47, 56, 0.06);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sticker-badge:hover {
+  transform: scale(1.06) rotate(-2deg);
+}
